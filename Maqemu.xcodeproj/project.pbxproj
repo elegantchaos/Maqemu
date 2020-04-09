@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E545243FD3E80019AB35 /* AppDelegate.swift */; };
+		2297E548243FD3E80019AB35 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E547243FD3E80019AB35 /* Document.swift */; };
+		2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E549243FD3E80019AB35 /* ContentView.swift */; };
+		2297E54C243FD3E90019AB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297E54B243FD3E90019AB35 /* Assets.xcassets */; };
+		2297E54F243FD3E90019AB35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297E54E243FD3E90019AB35 /* Preview Assets.xcassets */; };
+		2297E552243FD3EA0019AB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297E550243FD3EA0019AB35 /* Main.storyboard */; };
+		2297E55E243FD3EA0019AB35 /* MaqemuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E55D243FD3EA0019AB35 /* MaqemuTests.swift */; };
+		2297E569243FD3EA0019AB35 /* MaqemuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E568243FD3EA0019AB35 /* MaqemuUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2297E55A243FD3EA0019AB35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2297E53A243FD3E80019AB35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2297E541243FD3E80019AB35;
+			remoteInfo = Maqemu;
+		};
+		2297E565243FD3EA0019AB35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2297E53A243FD3E80019AB35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2297E541243FD3E80019AB35;
+			remoteInfo = Maqemu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2297E542243FD3E80019AB35 /* Maqemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maqemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2297E545243FD3E80019AB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2297E547243FD3E80019AB35 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		2297E549243FD3E80019AB35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2297E54B243FD3E90019AB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2297E54E243FD3E90019AB35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2297E551243FD3EA0019AB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2297E553243FD3EA0019AB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2297E554243FD3EA0019AB35 /* Maqemu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maqemu.entitlements; sourceTree = "<group>"; };
+		2297E559243FD3EA0019AB35 /* MaqemuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaqemuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2297E55D243FD3EA0019AB35 /* MaqemuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaqemuTests.swift; sourceTree = "<group>"; };
+		2297E55F243FD3EA0019AB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2297E564243FD3EA0019AB35 /* MaqemuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaqemuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2297E568243FD3EA0019AB35 /* MaqemuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaqemuUITests.swift; sourceTree = "<group>"; };
+		2297E56A243FD3EA0019AB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2297E53F243FD3E80019AB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2297E556243FD3EA0019AB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2297E561243FD3EA0019AB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2297E539243FD3E80019AB35 = {
+			isa = PBXGroup;
+			children = (
+				2297E544243FD3E80019AB35 /* Maqemu */,
+				2297E55C243FD3EA0019AB35 /* MaqemuTests */,
+				2297E567243FD3EA0019AB35 /* MaqemuUITests */,
+				2297E543243FD3E80019AB35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2297E543243FD3E80019AB35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2297E542243FD3E80019AB35 /* Maqemu.app */,
+				2297E559243FD3EA0019AB35 /* MaqemuTests.xctest */,
+				2297E564243FD3EA0019AB35 /* MaqemuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2297E544243FD3E80019AB35 /* Maqemu */ = {
+			isa = PBXGroup;
+			children = (
+				2297E545243FD3E80019AB35 /* AppDelegate.swift */,
+				2297E547243FD3E80019AB35 /* Document.swift */,
+				2297E549243FD3E80019AB35 /* ContentView.swift */,
+				2297E54B243FD3E90019AB35 /* Assets.xcassets */,
+				2297E550243FD3EA0019AB35 /* Main.storyboard */,
+				2297E553243FD3EA0019AB35 /* Info.plist */,
+				2297E554243FD3EA0019AB35 /* Maqemu.entitlements */,
+				2297E54D243FD3E90019AB35 /* Preview Content */,
+			);
+			path = Maqemu;
+			sourceTree = "<group>";
+		};
+		2297E54D243FD3E90019AB35 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2297E54E243FD3E90019AB35 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2297E55C243FD3EA0019AB35 /* MaqemuTests */ = {
+			isa = PBXGroup;
+			children = (
+				2297E55D243FD3EA0019AB35 /* MaqemuTests.swift */,
+				2297E55F243FD3EA0019AB35 /* Info.plist */,
+			);
+			path = MaqemuTests;
+			sourceTree = "<group>";
+		};
+		2297E567243FD3EA0019AB35 /* MaqemuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2297E568243FD3EA0019AB35 /* MaqemuUITests.swift */,
+				2297E56A243FD3EA0019AB35 /* Info.plist */,
+			);
+			path = MaqemuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2297E541243FD3E80019AB35 /* Maqemu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2297E56D243FD3EA0019AB35 /* Build configuration list for PBXNativeTarget "Maqemu" */;
+			buildPhases = (
+				2297E53E243FD3E80019AB35 /* Sources */,
+				2297E53F243FD3E80019AB35 /* Frameworks */,
+				2297E540243FD3E80019AB35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Maqemu;
+			productName = Maqemu;
+			productReference = 2297E542243FD3E80019AB35 /* Maqemu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2297E558243FD3EA0019AB35 /* MaqemuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2297E570243FD3EA0019AB35 /* Build configuration list for PBXNativeTarget "MaqemuTests" */;
+			buildPhases = (
+				2297E555243FD3EA0019AB35 /* Sources */,
+				2297E556243FD3EA0019AB35 /* Frameworks */,
+				2297E557243FD3EA0019AB35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2297E55B243FD3EA0019AB35 /* PBXTargetDependency */,
+			);
+			name = MaqemuTests;
+			productName = MaqemuTests;
+			productReference = 2297E559243FD3EA0019AB35 /* MaqemuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2297E563243FD3EA0019AB35 /* MaqemuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2297E573243FD3EA0019AB35 /* Build configuration list for PBXNativeTarget "MaqemuUITests" */;
+			buildPhases = (
+				2297E560243FD3EA0019AB35 /* Sources */,
+				2297E561243FD3EA0019AB35 /* Frameworks */,
+				2297E562243FD3EA0019AB35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2297E566243FD3EA0019AB35 /* PBXTargetDependency */,
+			);
+			name = MaqemuUITests;
+			productName = MaqemuUITests;
+			productReference = 2297E564243FD3EA0019AB35 /* MaqemuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2297E53A243FD3E80019AB35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Elegant Chaos";
+				TargetAttributes = {
+					2297E541243FD3E80019AB35 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					2297E558243FD3EA0019AB35 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 2297E541243FD3E80019AB35;
+					};
+					2297E563243FD3EA0019AB35 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 2297E541243FD3E80019AB35;
+					};
+				};
+			};
+			buildConfigurationList = 2297E53D243FD3E80019AB35 /* Build configuration list for PBXProject "Maqemu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2297E539243FD3E80019AB35;
+			productRefGroup = 2297E543243FD3E80019AB35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2297E541243FD3E80019AB35 /* Maqemu */,
+				2297E558243FD3EA0019AB35 /* MaqemuTests */,
+				2297E563243FD3EA0019AB35 /* MaqemuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2297E540243FD3E80019AB35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2297E552243FD3EA0019AB35 /* Main.storyboard in Resources */,
+				2297E54F243FD3E90019AB35 /* Preview Assets.xcassets in Resources */,
+				2297E54C243FD3E90019AB35 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2297E557243FD3EA0019AB35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2297E562243FD3EA0019AB35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2297E53E243FD3E80019AB35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2297E548243FD3E80019AB35 /* Document.swift in Sources */,
+				2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */,
+				2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2297E555243FD3EA0019AB35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2297E55E243FD3EA0019AB35 /* MaqemuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2297E560243FD3EA0019AB35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2297E569243FD3EA0019AB35 /* MaqemuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2297E55B243FD3EA0019AB35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2297E541243FD3E80019AB35 /* Maqemu */;
+			targetProxy = 2297E55A243FD3EA0019AB35 /* PBXContainerItemProxy */;
+		};
+		2297E566243FD3EA0019AB35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2297E541243FD3E80019AB35 /* Maqemu */;
+			targetProxy = 2297E565243FD3EA0019AB35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2297E550243FD3EA0019AB35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2297E551243FD3EA0019AB35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2297E56B243FD3EA0019AB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2297E56C243FD3EA0019AB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2297E56E243FD3EA0019AB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Maqemu/Maqemu.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Maqemu/Preview Content\"";
+				DEVELOPMENT_TEAM = 2H48644JM2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Maqemu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elegantchaos.Maqemu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2297E56F243FD3EA0019AB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Maqemu/Maqemu.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Maqemu/Preview Content\"";
+				DEVELOPMENT_TEAM = 2H48644JM2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Maqemu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elegantchaos.Maqemu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2297E571243FD3EA0019AB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2H48644JM2;
+				INFOPLIST_FILE = MaqemuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elegantchaos.MaqemuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Maqemu.app/Contents/MacOS/Maqemu";
+			};
+			name = Debug;
+		};
+		2297E572243FD3EA0019AB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2H48644JM2;
+				INFOPLIST_FILE = MaqemuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elegantchaos.MaqemuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Maqemu.app/Contents/MacOS/Maqemu";
+			};
+			name = Release;
+		};
+		2297E574243FD3EA0019AB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2H48644JM2;
+				INFOPLIST_FILE = MaqemuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elegantchaos.MaqemuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Maqemu;
+			};
+			name = Debug;
+		};
+		2297E575243FD3EA0019AB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2H48644JM2;
+				INFOPLIST_FILE = MaqemuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elegantchaos.MaqemuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Maqemu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2297E53D243FD3E80019AB35 /* Build configuration list for PBXProject "Maqemu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2297E56B243FD3EA0019AB35 /* Debug */,
+				2297E56C243FD3EA0019AB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2297E56D243FD3EA0019AB35 /* Build configuration list for PBXNativeTarget "Maqemu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2297E56E243FD3EA0019AB35 /* Debug */,
+				2297E56F243FD3EA0019AB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2297E570243FD3EA0019AB35 /* Build configuration list for PBXNativeTarget "MaqemuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2297E571243FD3EA0019AB35 /* Debug */,
+				2297E572243FD3EA0019AB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2297E573243FD3EA0019AB35 /* Build configuration list for PBXNativeTarget "MaqemuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2297E574243FD3EA0019AB35 /* Debug */,
+				2297E575243FD3EA0019AB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2297E53A243FD3E80019AB35 /* Project object */;
+}
