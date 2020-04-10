@@ -9,15 +9,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    let document: Document
+    
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
+        VStack {
+            Spacer()
+            Text(String(describing: document.settings))
+            Button(action: self.run) {
+                Text("Run")
+            }
+            Spacer()
+        }
+        .frame(width: 512.0, height: 512.0)
+
+    }
+    
+    func run() {
+        print("run me baby")
     }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(document: Document())
     }
 }

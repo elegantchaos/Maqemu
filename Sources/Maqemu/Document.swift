@@ -9,10 +9,16 @@
 import Cocoa
 import SwiftUI
 
-class Document: NSDocument {
+struct VMSettings: Codable {
+    var extras: [String] = []
+}
 
+class Document: NSDocument {
+    var settings = VMSettings()
+    
     override init() {
         super.init()
+        
         // Add your subclass-specific initialization here.
     }
 
@@ -22,7 +28,7 @@ class Document: NSDocument {
 
     override func makeWindowControllers() {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = ContentView(document: self)
 
         // Create the window and set the content view.
         let window = NSWindow(
@@ -36,12 +42,10 @@ class Document: NSDocument {
     }
 
     override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
-        guard let data = "".data(using: .utf8) else {
-                    throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        }
-        
-        let runner = FileWrapper(regularFileWithContents: data)
-        return FileWrapper(directoryWithFileWrappers: ["run.sh": runner])
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(settings)
+        let json = FileWrapper(regularFileWithContents: data)
+        return FileWrapper(directoryWithFileWrappers: ["settings.json": json])
     }
     
 //    override func data(ofType typeName: String) throws -> Data {
@@ -53,13 +57,20 @@ class Document: NSDocument {
     override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
         switch typeName {
             case "com.elegantchaos.maqemu":
-                break
+                try read(vm: fileWrapper)
             
             default:
                 throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         }
     }
 
-
+    func read(vm: FileWrapper) throws {
+        if let json = vm.fileWrappers?["settings.json"] {
+            if let data = json.regularFileContents {
+                let decoder = JSONDecoder()
+                settings = try decoder.decode(VMSettings.self, from: data)
+            }
+        }
+    }
 }
 
