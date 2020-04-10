@@ -1,0 +1,16 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Created by Sam Deane on 14/02/20.
+//  All code (c) 2020 - present day, Elegant Chaos Limited.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+#include "Dependencies/ReleaseTools/Configs/RTMac.xcconfig"
+#include "BuildNumber.xcconfig"
+
+RT_VERSION = 1.0
+RT_PRODUCT_NAME = Maqemu
+RT_SHORT_NAME = Maqemu
+RT_BUNDLE_IDENTIFIER = com.elegantchaos.maqemu
+RT_TEAM = 2H48644JM2
+
+// uncomment the line below to force the build number to something old, in order to test Sparkle
+//RT_BUILD = 100

@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ApplicationExtensions",
+        "repositoryURL": "git@github.com:elegantchaos/ApplicationExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "1da95b17f235c6029a0d307fcc0a1abfcdd6aa4a",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "package": "Bundles",
+        "repositoryURL": "https://github.com/elegantchaos/Bundles.git",
+        "state": {
+          "branch": null,
+          "revision": "3a26a4c438cffe24a2943bbfd2aaf1acc25e79da",
+          "version": "1.0.3"
+        }
+      },
+      {
+        "package": "CollectionExtensions",
+        "repositoryURL": "https://github.com/elegantchaos/CollectionExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "002f744b085c162f37783b8a629ae6364c558c3a",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "Files",
+        "repositoryURL": "https://github.com/elegantchaos/Files",
+        "state": {
+          "branch": null,
+          "revision": "fab79dce95afdcc1b7c6983d6874176465bd210a",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "Images",
+        "repositoryURL": "https://github.com/elegantchaos/Images",
+        "state": {
+          "branch": null,
+          "revision": "59a9088a3f83e4e074df55e6d74b38cf52ffe75d",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Logger",
+        "repositoryURL": "https://github.com/elegantchaos/Logger.git",
+        "state": {
+          "branch": null,
+          "revision": "cd67757f696ce6c8353d874d867a49b8e2306e2f",
+          "version": "1.5.3"
+        }
+      },
+      {
+        "package": "SemanticVersion",
+        "repositoryURL": "https://github.com/elegantchaos/SemanticVersion",
+        "state": {
+          "branch": null,
+          "revision": "6bda5a45a2f687a82a0fbb002bee8ad31e44f478",
+          "version": "1.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
