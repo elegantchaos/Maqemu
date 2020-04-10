@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22890B7C244085D100CF906B /* qemu in Resources */ = {isa = PBXBuildFile; fileRef = 22890B7B244085D100CF906B /* qemu */; };
+		22890B7F2440885400CF906B /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22890B7E2440885400CF906B /* ApplicationExtensions */; };
 		2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E545243FD3E80019AB35 /* AppDelegate.swift */; };
 		2297E548243FD3E80019AB35 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E547243FD3E80019AB35 /* Document.swift */; };
 		2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E549243FD3E80019AB35 /* ContentView.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22890B7B244085D100CF906B /* qemu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = qemu; path = ../../../Dropbox/Emulators/Applications/Qemu/qemu; sourceTree = "<group>"; };
 		2297E542243FD3E80019AB35 /* Maqemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maqemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297E545243FD3E80019AB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2297E547243FD3E80019AB35 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22890B7F2440885400CF906B /* ApplicationExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,7 @@
 				2297E550243FD3EA0019AB35 /* Main.storyboard */,
 				2297E553243FD3EA0019AB35 /* Info.plist */,
 				2297E554243FD3EA0019AB35 /* Maqemu.entitlements */,
+				22890B7B244085D100CF906B /* qemu */,
 				2297E54D243FD3E90019AB35 /* Preview Content */,
 			);
 			path = Maqemu;
@@ -154,6 +159,9 @@
 			dependencies = (
 			);
 			name = Maqemu;
+			packageProductDependencies = (
+				22890B7E2440885400CF906B /* ApplicationExtensions */,
+			);
 			productName = Maqemu;
 			productReference = 2297E542243FD3E80019AB35 /* Maqemu.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 2297E539243FD3E80019AB35;
+			packageReferences = (
+				22890B7D2440885400CF906B /* XCRemoteSwiftPackageReference "ApplicationExtensions" */,
+			);
 			productRefGroup = 2297E543243FD3E80019AB35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22890B7C244085D100CF906B /* qemu in Resources */,
 				2297E552243FD3EA0019AB35 /* Main.storyboard in Resources */,
 				2297E54F243FD3E90019AB35 /* Preview Assets.xcassets in Resources */,
 				2297E54C243FD3E90019AB35 /* Assets.xcassets in Resources */,
@@ -601,6 +613,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22890B7D2440885400CF906B /* XCRemoteSwiftPackageReference "ApplicationExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:elegantchaos/ApplicationExtensions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22890B7E2440885400CF906B /* ApplicationExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22890B7D2440885400CF906B /* XCRemoteSwiftPackageReference "ApplicationExtensions" */;
+			productName = ApplicationExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2297E53A243FD3E80019AB35 /* Project object */;
 }
