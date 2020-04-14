@@ -12,6 +12,7 @@ import SwiftUI
 
 struct VMSettings: Codable {
     var disks: [String] = []
+    var devices: [String] = []
     var options: [String:String] = [:]
     var extras: [String] = []
 }
@@ -76,43 +77,55 @@ class Document: NSDocument {
         }
     }
     
+    var arguments: [String] {
+        var arguments = [
+            "-L", "pc-bios",
+        ]
+
+        if let name = displayName {
+            arguments.append("-name")
+            arguments.append(name)
+        }
+        
+        let optionKeys = [
+            "machine": "-M",
+            "memory": "-m",
+            "keyboard layout": "-k",
+            "boot order": "-boot"
+        ]
+        
+        for (key,value) in settings.options {
+            arguments.append(optionKeys[key]!)
+            arguments.append(value)
+        }
+        
+        for device in settings.devices {
+            arguments.append("-device")
+            arguments.append(device)
+        }
+        
+        arguments.append(contentsOf: settings.extras)
+        let disks = settings.disks
+        let count = disks.count
+        var index = 0
+        for letter in "abcdefghijklmnopqrstuvwxyz" {
+            if index == count {
+                break
+            }
+
+            let disk = settings.disks[index]
+            let path = fileURL!.appendingPathComponent(disk).path
+            arguments.append("-hd\(letter)")
+            arguments.append(path)
+            index += 1
+        }
+        
+        return arguments
+    }
+    
     func run() throws {
         if let qemuURL = Bundle.main.url(forResource: "qemu", withExtension: "") {
             let exeURL = qemuURL.appendingPathComponent("qemu-system-ppc")
-            var arguments = [
-                "-L", "pc-bios",
-            ]
-
-            if let name = displayName {
-                arguments.append("-name")
-                arguments.append(name)
-            }
-            
-            let optionKeys = [
-                "memory": "-m",
-                "keyboard": "-k",
-            ]
-            
-            for (key,value) in settings.options {
-                arguments.append(optionKeys[key]!)
-                arguments.append(value)
-            }
-            
-            arguments.append(contentsOf: settings.extras)
-            let disks = settings.disks
-            let count = disks.count
-            var index = 0
-            for letter in "abcdefghijklmnopqrstuvwxyz" {
-                let disk = settings.disks[index]
-                let path = fileURL!.appendingPathComponent(disk).path
-                arguments.append("-hd\(letter)")
-                arguments.append(path)
-                index += 1
-                if index == count {
-                    break
-                }
-            }
-
             let qemu = Runner(for: exeURL, cwd: qemuURL)
             
             Swift.print(exeURL)

@@ -17,41 +17,57 @@ struct ContentView: View {
         let disks = settings.disks
         let options = settings.options
         
-        return ScrollView {
-            Form {
-                Section(header: Text("Drives").font(.headline)) {
-                    Group {
-                        ForEach(document.settings.disks, id: \.self) { disk in
-                            HStack {
-                                Text("#\(disks.firstIndex(of: disk)!)")
-                                Text(disk)
+        return
+            HStack(alignment: .top, spacing: 20.0) {
+               ScrollView {
+                Form {
+                    Section(header: Text("Drives").font(.headline)) {
+                        Group {
+                            ForEach(document.settings.disks, id: \.self) { disk in
+                                HStack {
+                                    Text("#\(disks.firstIndex(of: disk)!)")
+                                    Text(disk)
+                                }
                             }
                         }
                     }
-                }
-                
-                Section(header: Text("Options").font(.headline)) {
-                    ForEach(self.optionKeys, id: \.self) { key in
-                        HStack {
-                            Text(key)
-                            Text(options[key]!)
+
+                    Section(header: Text("Devices").font(.headline).padding(.top)) {
+                        Group {
+                            ForEach(document.settings.devices, id: \.self) { device in
+                                HStack {
+                                    Text(device)
+                                }
+                            }
                         }
                     }
-                }
-                
-                Section(header: Text("Extra Parameters").font(.headline)) {
-                    ForEach(settings.extras, id: \.self) { extra in
-                        Text(extra)
+
+                    Section(header: Text("Options").font(.headline).padding(.top)) {
+                        ForEach(self.optionKeys, id: \.self) { key in
+                            HStack {
+                                Text(key)
+                                Text(options[key]!)
+                            }
+                        }
+                    }
+                    
+                    Section(header: Text("Extra Parameters").font(.headline).padding(.top)) {
+                        ForEach(settings.extras, id: \.self) { extra in
+                            Text(extra)
+                        }
+                    }
+                    
+                    Section(header: Text("Arguments").padding(.top)) {
+                        Text(document.arguments.joined(separator: " ")).font(.caption)
                     }
                 }
-                
-                Section() {
-                    Button(action: self.run) {
-                        Text("Run")
-                    }
-                }
-            }.padding()
-        }
+            }
+            
+            Button(action: self.run) {
+                Text("Run")
+            }
+        }.padding()
+        .frame(minWidth: 640, minHeight: 480)
     }
     
     func run() {
