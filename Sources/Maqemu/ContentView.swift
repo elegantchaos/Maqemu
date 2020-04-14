@@ -11,14 +11,27 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            Spacer()
-            Text(String(describing: document.settings))
-            Button(action: self.run) {
-                Text("Run")
+            Form {
+                Section(header: Text("Drives")) {
+                    ForEach(document.settings.disks, id: \.self) { disk in
+                        Text(disk)
+                    }
+                }
+                
+                Section(header: Text("Extra Parameters")) {
+                    ForEach(document.settings.extras, id: \.self) { extra in
+                        Text(extra)
+                    }
+                }
+                
+                Section() {
+                    Button(action: self.run) {
+                        Text("Run")
+                    }
+                }
             }
-            Spacer()
         }
-        .frame(width: 512.0, height: 512.0)
+        .frame(minWidth: 512.0, minHeight: 512.0)
 
     }
     
