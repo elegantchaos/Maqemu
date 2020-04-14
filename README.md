@@ -19,7 +19,7 @@ For now though, you have to make them manually, so it's worth talking a bit abou
 
 ### Structure 
 
-You can reveal the contents of it by right-clicking on it and choosing `Show Package Contents`.
+You can reveal the contents of a `.maqemu` bundle by right-clicking on it and choosing `Show Package Contents`.
 
 Inside it, you can expect to see one or more drive files, and a `settings.json` file containing configuration information:
 
@@ -30,11 +30,15 @@ System 9.2.2.maqemu/
     settings.json
 ```
 
+If you are creating a bundle yourself, you need to move your drive files into it. You can create symbolic links to drive files that are located elsewhere, but then the qemu bundle will not be standalone, which slightly defeats the object of the exercise.
+
 ### Settings
 
-When you double-click on a Maqemu virtual machine bundle, it reads the  `settings.json` to work out what settings to launch QEMU with.
+When you double-click on a `.mqemu` bundle, it opens up as a window in Maqemu. Eventually this window will allow you to edit the settings; currently it just displays them. 
 
-This contains enough information to build up all the command line options that you'd have to supply if you were launching `qemu-system-ppc` yourself.
+When you click the `Run` button, Maqemu reads the  `settings.json` file in the bundle work out what settings to launch QEMU with.
+
+This JSON file contains enough information to build up all the command line options that you'd have to supply if you were launching `qemu-system-ppc` yourself.
 
 Currently the file looks something like this:
 
