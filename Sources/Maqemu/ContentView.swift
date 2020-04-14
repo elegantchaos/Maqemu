@@ -8,18 +8,39 @@ import SwiftUI
 struct ContentView: View {
     let document: Document
     
+    var optionKeys: [String] {
+        document.settings.options.keys.map({ String($0) })
+    }
+    
     var body: some View {
+        let settings = document.settings
+        let disks = settings.disks
+        let options = settings.options
         
-        VStack {
+        return ScrollView {
             Form {
-                Section(header: Text("Drives")) {
-                    ForEach(document.settings.disks, id: \.self) { disk in
-                        Text(disk)
+                Section(header: Text("Drives").font(.headline)) {
+                    Group {
+                        ForEach(document.settings.disks, id: \.self) { disk in
+                            HStack {
+                                Text("#\(disks.firstIndex(of: disk)!)")
+                                Text(disk)
+                            }
+                        }
                     }
                 }
                 
-                Section(header: Text("Extra Parameters")) {
-                    ForEach(document.settings.extras, id: \.self) { extra in
+                Section(header: Text("Options").font(.headline)) {
+                    ForEach(self.optionKeys, id: \.self) { key in
+                        HStack {
+                            Text(key)
+                            Text(options[key]!)
+                        }
+                    }
+                }
+                
+                Section(header: Text("Extra Parameters").font(.headline)) {
+                    ForEach(settings.extras, id: \.self) { extra in
                         Text(extra)
                     }
                 }
@@ -29,10 +50,8 @@ struct ContentView: View {
                         Text("Run")
                     }
                 }
-            }
+            }.padding()
         }
-        .frame(minWidth: 512.0, minHeight: 512.0)
-
     }
     
     func run() {

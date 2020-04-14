@@ -12,6 +12,7 @@ import SwiftUI
 
 struct VMSettings: Codable {
     var disks: [String] = []
+    var options: [String:String] = [:]
     var extras: [String] = []
 }
 
@@ -78,7 +79,26 @@ class Document: NSDocument {
     func run() throws {
         if let qemuURL = Bundle.main.url(forResource: "qemu", withExtension: "") {
             let exeURL = qemuURL.appendingPathComponent("qemu-system-ppc")
-            var arguments = settings.extras
+            var arguments = [
+                "-L", "pc-bios",
+            ]
+
+            if let name = displayName {
+                arguments.append("-name")
+                arguments.append(name)
+            }
+            
+            let optionKeys = [
+                "memory": "-m",
+                "keyboard": "-k",
+            ]
+            
+            for (key,value) in settings.options {
+                arguments.append(optionKeys[key]!)
+                arguments.append(value)
+            }
+            
+            arguments.append(contentsOf: settings.extras)
             let disks = settings.disks
             let count = disks.count
             var index = 0
