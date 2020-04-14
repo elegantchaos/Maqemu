@@ -30,6 +30,7 @@ VersionX-revision.h
 # Swift Package Manager
 Packages/
 .build
+Builds/
 
 # build products
 build/
