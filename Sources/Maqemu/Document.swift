@@ -10,15 +10,10 @@ import Cocoa
 import Runner
 import SwiftUI
 
-struct VMSettings: Codable {
-    var disks: [String] = []
-    var devices: [String] = []
-    var options: [String:String] = [:]
-    var extras: [String] = []
-}
-
 class Document: NSDocument {
-    var settings = VMSettings()
+    var settings = QemuSettings()
+    var process: Runner.RunningProcess? = nil
+    var console: String = ""
     
     override init() {
         super.init()
@@ -72,70 +67,20 @@ class Document: NSDocument {
         if let json = vm.fileWrappers?["settings.json"] {
             if let data = json.regularFileContents {
                 let decoder = JSONDecoder()
-                settings = try decoder.decode(VMSettings.self, from: data)
+                settings = try decoder.decode(QemuSettings.self, from: data)
             }
         }
     }
     
-    var arguments: [String] {
-        var arguments = [
-            "-L", "pc-bios",
-        ]
-
-        if let name = displayName {
-            arguments.append("-name")
-            arguments.append(name)
-        }
-        
-        let optionKeys = [
-            "machine": "-M",
-            "memory": "-m",
-            "keyboard layout": "-k",
-            "boot order": "-boot"
-        ]
-        
-        for (key,value) in settings.options {
-            arguments.append(optionKeys[key]!)
-            arguments.append(value)
-        }
-        
-        for device in settings.devices {
-            arguments.append("-device")
-            arguments.append(device)
-        }
-        
-        arguments.append(contentsOf: settings.extras)
-        let disks = settings.disks
-        let count = disks.count
-        var index = 0
-        for letter in "abcdefghijklmnopqrstuvwxyz" {
-            if index == count {
-                break
-            }
-
-            let disk = settings.disks[index]
-            let path = fileURL!.appendingPathComponent(disk).path
-            arguments.append("-hd\(letter)")
-            arguments.append(path)
-            index += 1
-        }
-        
-        return arguments
-    }
     
-    func run() throws {
+    var arguments: [String] { return settings.arguments(name: displayName, relativeTo: fileURL) }
+    
+    func run(consoleCallback: @escaping Runner.PipeCallback) throws {
         if let qemuURL = Bundle.main.url(forResource: "qemu", withExtension: "") {
             let exeURL = qemuURL.appendingPathComponent("qemu-system-ppc")
             let qemu = Runner(for: exeURL, cwd: qemuURL)
-            
-            Swift.print(exeURL)
-            Swift.print(arguments)
-            
-            let result = try qemu.sync(arguments: arguments)
-            Swift.print(result.status)
-            Swift.print(result.stdout)
-            Swift.print(result.stderr)
-            Swift.print("done")
+
+            process = try qemu.async(arguments: arguments, stdoutMode: .callback(block: consoleCallback), stderrMode: .callback(block: consoleCallback))
         }
     }
 }

@@ -19,7 +19,8 @@
 		2297E569243FD3EA0019AB35 /* MaqemuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E568243FD3EA0019AB35 /* MaqemuUITests.swift */; };
 		229C85B82445C6B40054FF1E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229C85B72445C6B40054FF1E /* Sparkle.framework */; };
 		229C85B92445C6B40054FF1E /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 229C85B72445C6B40054FF1E /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		229C85BC2445CA7E0054FF1E /* qemu in Resources */ = {isa = PBXBuildFile; fileRef = 229C85BB2445CA7E0054FF1E /* qemu */; };
+		229C85BC2445CA7E0054FF1E /* qemu in Resources */ = {isa = PBXBuildFile; fileRef = 229C85BB2445CA7E0054FF1E /* qemu */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85BD2446170E0054FF1E /* QemuSettings.swift */; };
 		22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9222440BF130015033F /* ApplicationExtensions */; };
 		22AFB9262440BF7C0015033F /* Runner in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9252440BF7C0015033F /* Runner */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		2297E56A243FD3EA0019AB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		229C85B72445C6B40054FF1E /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sparkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		229C85BB2445CA7E0054FF1E /* qemu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qemu; sourceTree = "<group>"; };
+		229C85BD2446170E0054FF1E /* QemuSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QemuSettings.swift; sourceTree = "<group>"; };
+		229C85C02446230B0054FF1E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,7 @@
 		2297E539243FD3E80019AB35 = {
 			isa = PBXGroup;
 			children = (
+				229C85C02446230B0054FF1E /* README.md */,
 				22890BAA24408A1100CF906B /* Sources */,
 				22890BAB24408AA100CF906B /* Tests */,
 				2297E543243FD3E80019AB35 /* Products */,
@@ -164,6 +168,7 @@
 			children = (
 				2297E545243FD3E80019AB35 /* AppDelegate.swift */,
 				2297E547243FD3E80019AB35 /* Document.swift */,
+				229C85BD2446170E0054FF1E /* QemuSettings.swift */,
 				2297E549243FD3E80019AB35 /* ContentView.swift */,
 				22890B842440891800CF906B /* Resources */,
 			);
@@ -317,11 +322,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229C85BC2445CA7E0054FF1E /* qemu in Resources */,
 				22890B822440890700CF906B /* Maqemu.xcconfig in Resources */,
 				22890B832440890700CF906B /* BuildNumber.xcconfig in Resources */,
 				2297E552243FD3EA0019AB35 /* Main.storyboard in Resources */,
 				2297E54F243FD3E90019AB35 /* Preview Assets.xcassets in Resources */,
-				229C85BC2445CA7E0054FF1E /* qemu in Resources */,
 				2297E54C243FD3E90019AB35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +354,7 @@
 			files = (
 				2297E548243FD3E80019AB35 /* Document.swift in Sources */,
 				2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */,
+				229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */,
 				2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

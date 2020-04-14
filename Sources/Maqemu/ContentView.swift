@@ -7,6 +7,7 @@ import SwiftUI
 
 struct ContentView: View {
     let document: Document
+    @State var console: String = ""
     
     var optionKeys: [String] {
         document.settings.options.keys.map({ String($0) })
@@ -17,9 +18,8 @@ struct ContentView: View {
         let disks = settings.disks
         let options = settings.options
         
-        return
-            HStack(alignment: .top, spacing: 20.0) {
-               ScrollView {
+        return VStack(alignment: .leading) {
+            ScrollView {
                 Form {
                     Section(header: Text("Drives").font(.headline)) {
                         Group {
@@ -31,7 +31,7 @@ struct ContentView: View {
                             }
                         }
                     }
-
+                    
                     Section(header: Text("Devices").font(.headline).padding(.top)) {
                         Group {
                             ForEach(document.settings.devices, id: \.self) { device in
@@ -41,7 +41,7 @@ struct ContentView: View {
                             }
                         }
                     }
-
+                    
                     Section(header: Text("Options").font(.headline).padding(.top)) {
                         ForEach(self.optionKeys, id: \.self) { key in
                             HStack {
@@ -56,23 +56,36 @@ struct ContentView: View {
                             Text(extra)
                         }
                     }
-                    
-                    Section(header: Text("Arguments").padding(.top)) {
-                        Text(document.arguments.joined(separator: " ")).font(.caption)
-                    }
                 }
             }
+                .padding()
             
-            Button(action: self.run) {
-                Text("Run")
+            Group {
+                HStack(alignment: .bottom) {
+                    Text(consoleText).font(.caption)
+                    Button(action: self.run) {
+                        Text("Run")
+                    }
+                }.padding()
             }
-        }.padding()
+        }
         .frame(minWidth: 640, minHeight: 480)
+    }
+    
+    var consoleText: String {
+        if console.isEmpty {
+            let args = document.arguments.joined(separator: " ")
+            return "> qemu.system.ppc \(args)"
+        } else {
+            return console
+        }
     }
     
     func run() {
         do {
-            try document.run()
+            console = ""
+            let appendConsole = { (string: String) in self.console.append(string) }
+            try document.run(consoleCallback: appendConsole)
         } catch {
             print("failed to run")
         }
