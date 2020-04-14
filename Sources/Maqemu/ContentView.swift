@@ -1,10 +1,7 @@
-//
-//  ContentView.swift
-//  Maqemu
-//
-//  Created by Sam Deane on 09/04/2020.
-//  Copyright © 2020 Elegant Chaos. All rights reserved.
-//
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Created by Sam Deane on 14/04/2020.
+//  All code (c) 2020 - present day, Elegant Chaos Limited.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 import SwiftUI
 
@@ -26,7 +23,11 @@ struct ContentView: View {
     }
     
     func run() {
-        print("run me baby")
+        do {
+            try document.run()
+        } catch {
+            print("failed to run")
+        }
     }
 }
 

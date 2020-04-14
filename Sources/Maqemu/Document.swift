@@ -71,9 +71,6 @@ class Document: NSDocument {
             if let data = json.regularFileContents {
                 let decoder = JSONDecoder()
                 settings = try decoder.decode(VMSettings.self, from: data)
-                if settings.extras.count > 0 {
-                    try run()
-                }
             }
         }
     }
