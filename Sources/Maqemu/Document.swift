@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Runner
 import SwiftUI
 
 struct VMSettings: Codable {
@@ -69,7 +70,26 @@ class Document: NSDocument {
             if let data = json.regularFileContents {
                 let decoder = JSONDecoder()
                 settings = try decoder.decode(VMSettings.self, from: data)
+                if settings.extras.count > 0 {
+                    try run()
+                }
             }
+        }
+    }
+    
+    func run() throws {
+        if let qemuURL = Bundle.main.url(forResource: "qemu", withExtension: "") {
+            let exeURL = qemuURL.appendingPathComponent("qemu-system-ppc")
+            var arguments = settings.extras
+            let qemu = Runner(for: exeURL)
+            
+            Swift.print(exeURL)
+            Swift.print(arguments)
+            
+            let result = try qemu.sync(arguments: arguments)
+            Swift.print(result.status)
+            Swift.print(result.stdout)
+            Swift.print(result.stderr)
         }
     }
 }
