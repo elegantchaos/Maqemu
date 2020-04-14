@@ -5,9 +5,19 @@
       location = "container:Maqemu.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Dependencies">
+      location = "group:Extras">
+   </FileRef>
+   <Group
+      location = "group:"
+      name = "Dependencies">
+      <FileRef
+         location = "group:Dependencies/Sparkle/Sparkle.xcodeproj">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:../ApplicationExtensions">
    </FileRef>
    <FileRef
-      location = "group:Extras">
+      location = "group:../Logger">
    </FileRef>
 </Workspace>

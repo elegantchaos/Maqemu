@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22890B7F2440885400CF906B /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22890B7E2440885400CF906B /* ApplicationExtensions */; };
 		22890B822440890700CF906B /* Maqemu.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22890B802440890700CF906B /* Maqemu.xcconfig */; };
 		22890B832440890700CF906B /* BuildNumber.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22890B812440890700CF906B /* BuildNumber.xcconfig */; };
 		2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E545243FD3E80019AB35 /* AppDelegate.swift */; };
@@ -18,6 +17,11 @@
 		2297E552243FD3EA0019AB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297E550243FD3EA0019AB35 /* Main.storyboard */; };
 		2297E55E243FD3EA0019AB35 /* MaqemuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E55D243FD3EA0019AB35 /* MaqemuTests.swift */; };
 		2297E569243FD3EA0019AB35 /* MaqemuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E568243FD3EA0019AB35 /* MaqemuUITests.swift */; };
+		229C85B82445C6B40054FF1E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229C85B72445C6B40054FF1E /* Sparkle.framework */; };
+		229C85B92445C6B40054FF1E /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 229C85B72445C6B40054FF1E /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		229C85BC2445CA7E0054FF1E /* qemu in Resources */ = {isa = PBXBuildFile; fileRef = 229C85BB2445CA7E0054FF1E /* qemu */; };
+		22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9222440BF130015033F /* ApplicationExtensions */; };
+		22AFB9262440BF7C0015033F /* Runner in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9252440BF7C0015033F /* Runner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,42 +41,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		229C85BA2445C6B40054FF1E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				229C85B92445C6B40054FF1E /* Sparkle.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		22890B802440890700CF906B /* Maqemu.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Maqemu.xcconfig; sourceTree = "<group>"; };
 		22890B812440890700CF906B /* BuildNumber.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BuildNumber.xcconfig; sourceTree = "<group>"; };
-		22890B862440891F00CF906B /* qemu-img */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "qemu-img"; sourceTree = "<group>"; };
-		22890B872440891F00CF906B /* qemu-nbd */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "qemu-nbd"; sourceTree = "<group>"; };
-		22890B882440891F00CF906B /* qemu-edid */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "qemu-edid"; sourceTree = "<group>"; };
-		22890B892440891F00CF906B /* qemu-system-ppc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "qemu-system-ppc"; sourceTree = "<group>"; };
-		22890B8B2440891F00CF906B /* libp11-kit.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libp11-kit.0.dylib"; sourceTree = "<group>"; };
-		22890B8C2440891F00CF906B /* libpcre.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libpcre.1.dylib; sourceTree = "<group>"; };
-		22890B8D2440891F00CF906B /* libgnutls.30.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgnutls.30.dylib; sourceTree = "<group>"; };
-		22890B8E2440891F00CF906B /* libtasn1.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libtasn1.6.dylib; sourceTree = "<group>"; };
-		22890B8F2440891F00CF906B /* libidn2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libidn2.0.dylib; sourceTree = "<group>"; };
-		22890B902440891F00CF906B /* libglib-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libglib-2.0.0.dylib"; sourceTree = "<group>"; };
-		22890B912440891F00CF906B /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libpng16.16.dylib; sourceTree = "<group>"; };
-		22890B922440891F00CF906B /* liblzo2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liblzo2.2.dylib; sourceTree = "<group>"; };
-		22890B932440891F00CF906B /* libgobject-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libgobject-2.0.0.dylib"; sourceTree = "<group>"; };
-		22890B942440891F00CF906B /* libnettle.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libnettle.6.dylib; sourceTree = "<group>"; };
-		22890B952440891F00CF906B /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libusb-1.0.0.dylib"; sourceTree = "<group>"; };
-		22890B962440891F00CF906B /* libvdeplug.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libvdeplug.3.dylib; sourceTree = "<group>"; };
-		22890B972440891F00CF906B /* libgmodule-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libgmodule-2.0.0.dylib"; sourceTree = "<group>"; };
-		22890B982440891F00CF906B /* libhogweed.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libhogweed.4.dylib; sourceTree = "<group>"; };
-		22890B992440891F00CF906B /* libjpeg.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libjpeg.9.dylib; sourceTree = "<group>"; };
-		22890B9A2440891F00CF906B /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libintl.8.dylib; sourceTree = "<group>"; };
-		22890B9B2440891F00CF906B /* libgthread-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libgthread-2.0.0.dylib"; sourceTree = "<group>"; };
-		22890B9C2440891F00CF906B /* libunistring.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libunistring.2.dylib; sourceTree = "<group>"; };
-		22890B9D2440891F00CF906B /* libpixman-1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libpixman-1.0.dylib"; sourceTree = "<group>"; };
-		22890B9E2440891F00CF906B /* libcrypto.1.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcrypto.1.1.dylib; sourceTree = "<group>"; };
-		22890B9F2440891F00CF906B /* libssh.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libssh.4.dylib; sourceTree = "<group>"; };
-		22890BA02440891F00CF906B /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgmp.10.dylib; sourceTree = "<group>"; };
-		22890BA12440891F00CF906B /* libffi.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libffi.6.dylib; sourceTree = "<group>"; };
-		22890BA22440891F00CF906B /* libgio-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libgio-2.0.0.dylib"; sourceTree = "<group>"; };
-		22890BA32440891F00CF906B /* elf2dmp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = elf2dmp; sourceTree = "<group>"; };
-		22890BA42440891F00CF906B /* qemu-ga */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "qemu-ga"; sourceTree = "<group>"; };
-		22890BA62440891F00CF906B /* vgabios-stdvga.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "vgabios-stdvga.bin"; sourceTree = "<group>"; };
-		22890BA72440891F00CF906B /* openbios-ppc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "openbios-ppc"; sourceTree = "<group>"; };
-		22890BA82440891F00CF906B /* qemu-io */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "qemu-io"; sourceTree = "<group>"; };
 		22890BA9244089C400CF906B /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		2297E542243FD3E80019AB35 /* Maqemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maqemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297E545243FD3E80019AB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +74,8 @@
 		2297E564243FD3EA0019AB35 /* MaqemuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaqemuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297E568243FD3EA0019AB35 /* MaqemuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaqemuUITests.swift; sourceTree = "<group>"; };
 		2297E56A243FD3EA0019AB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		229C85B72445C6B40054FF1E /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sparkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		229C85BB2445CA7E0054FF1E /* qemu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qemu; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22890B7F2440885400CF906B /* ApplicationExtensions in Frameworks */,
+				22AFB9262440BF7C0015033F /* Runner in Frameworks */,
+				229C85B82445C6B40054FF1E /* Sparkle.framework in Frameworks */,
+				22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,65 +117,9 @@
 				2297E554243FD3EA0019AB35 /* Maqemu.entitlements */,
 				22890B802440890700CF906B /* Maqemu.xcconfig */,
 				2297E54D243FD3E90019AB35 /* PreviewContent */,
-				22890B852440891F00CF906B /* qemu */,
+				229C85BB2445CA7E0054FF1E /* qemu */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		22890B852440891F00CF906B /* qemu */ = {
-			isa = PBXGroup;
-			children = (
-				22890B862440891F00CF906B /* qemu-img */,
-				22890B872440891F00CF906B /* qemu-nbd */,
-				22890B882440891F00CF906B /* qemu-edid */,
-				22890B892440891F00CF906B /* qemu-system-ppc */,
-				22890B8A2440891F00CF906B /* libs */,
-				22890BA32440891F00CF906B /* elf2dmp */,
-				22890BA42440891F00CF906B /* qemu-ga */,
-				22890BA52440891F00CF906B /* pc-bios */,
-				22890BA82440891F00CF906B /* qemu-io */,
-			);
-			path = qemu;
-			sourceTree = "<group>";
-		};
-		22890B8A2440891F00CF906B /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				22890B8B2440891F00CF906B /* libp11-kit.0.dylib */,
-				22890B8C2440891F00CF906B /* libpcre.1.dylib */,
-				22890B8D2440891F00CF906B /* libgnutls.30.dylib */,
-				22890B8E2440891F00CF906B /* libtasn1.6.dylib */,
-				22890B8F2440891F00CF906B /* libidn2.0.dylib */,
-				22890B902440891F00CF906B /* libglib-2.0.0.dylib */,
-				22890B912440891F00CF906B /* libpng16.16.dylib */,
-				22890B922440891F00CF906B /* liblzo2.2.dylib */,
-				22890B932440891F00CF906B /* libgobject-2.0.0.dylib */,
-				22890B942440891F00CF906B /* libnettle.6.dylib */,
-				22890B952440891F00CF906B /* libusb-1.0.0.dylib */,
-				22890B962440891F00CF906B /* libvdeplug.3.dylib */,
-				22890B972440891F00CF906B /* libgmodule-2.0.0.dylib */,
-				22890B982440891F00CF906B /* libhogweed.4.dylib */,
-				22890B992440891F00CF906B /* libjpeg.9.dylib */,
-				22890B9A2440891F00CF906B /* libintl.8.dylib */,
-				22890B9B2440891F00CF906B /* libgthread-2.0.0.dylib */,
-				22890B9C2440891F00CF906B /* libunistring.2.dylib */,
-				22890B9D2440891F00CF906B /* libpixman-1.0.dylib */,
-				22890B9E2440891F00CF906B /* libcrypto.1.1.dylib */,
-				22890B9F2440891F00CF906B /* libssh.4.dylib */,
-				22890BA02440891F00CF906B /* libgmp.10.dylib */,
-				22890BA12440891F00CF906B /* libffi.6.dylib */,
-				22890BA22440891F00CF906B /* libgio-2.0.0.dylib */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		22890BA52440891F00CF906B /* pc-bios */ = {
-			isa = PBXGroup;
-			children = (
-				22890BA62440891F00CF906B /* vgabios-stdvga.bin */,
-				22890BA72440891F00CF906B /* openbios-ppc */,
-			);
-			path = "pc-bios";
 			sourceTree = "<group>";
 		};
 		22890BAA24408A1100CF906B /* Sources */ = {
@@ -212,6 +145,7 @@
 				22890BAA24408A1100CF906B /* Sources */,
 				22890BAB24408AA100CF906B /* Tests */,
 				2297E543243FD3E80019AB35 /* Products */,
+				229C85B62445C6B40054FF1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +196,14 @@
 			path = MaqemuUITests;
 			sourceTree = "<group>";
 		};
+		229C85B62445C6B40054FF1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				229C85B72445C6B40054FF1E /* Sparkle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +214,7 @@
 				2297E53E243FD3E80019AB35 /* Sources */,
 				2297E53F243FD3E80019AB35 /* Frameworks */,
 				2297E540243FD3E80019AB35 /* Resources */,
+				229C85BA2445C6B40054FF1E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,7 +222,8 @@
 			);
 			name = Maqemu;
 			packageProductDependencies = (
-				22890B7E2440885400CF906B /* ApplicationExtensions */,
+				22AFB9222440BF130015033F /* ApplicationExtensions */,
+				22AFB9252440BF7C0015033F /* Runner */,
 			);
 			productName = Maqemu;
 			productReference = 2297E542243FD3E80019AB35 /* Maqemu.app */;
@@ -354,7 +298,8 @@
 			);
 			mainGroup = 2297E539243FD3E80019AB35;
 			packageReferences = (
-				22890B7D2440885400CF906B /* XCRemoteSwiftPackageReference "ApplicationExtensions" */,
+				22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */,
+				22AFB9242440BF7C0015033F /* XCRemoteSwiftPackageReference "Runner" */,
 			);
 			productRefGroup = 2297E543243FD3E80019AB35 /* Products */;
 			projectDirPath = "";
@@ -376,6 +321,7 @@
 				22890B832440890700CF906B /* BuildNumber.xcconfig in Resources */,
 				2297E552243FD3EA0019AB35 /* Main.storyboard in Resources */,
 				2297E54F243FD3E90019AB35 /* Preview Assets.xcassets in Resources */,
+				229C85BC2445CA7E0054FF1E /* qemu in Resources */,
 				2297E54C243FD3E90019AB35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +513,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22890B802440890700CF906B /* Maqemu.xcconfig */;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -574,6 +524,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 22890B802440890700CF906B /* Maqemu.xcconfig */;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 			};
 			name = Release;
 		};
@@ -703,21 +657,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		22890B7D2440885400CF906B /* XCRemoteSwiftPackageReference "ApplicationExtensions" */ = {
+		22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:elegantchaos/ApplicationExtensions.git";
+			repositoryURL = "https://github.com/elegantchaos/ApplicationExtensions.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.1.1;
+			};
+		};
+		22AFB9242440BF7C0015033F /* XCRemoteSwiftPackageReference "Runner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elegantchaos/Runner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		22890B7E2440885400CF906B /* ApplicationExtensions */ = {
+		22AFB9222440BF130015033F /* ApplicationExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 22890B7D2440885400CF906B /* XCRemoteSwiftPackageReference "ApplicationExtensions" */;
+			package = 22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */;
 			productName = ApplicationExtensions;
+		};
+		22AFB9252440BF7C0015033F /* Runner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22AFB9242440BF7C0015033F /* XCRemoteSwiftPackageReference "Runner" */;
+			productName = Runner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

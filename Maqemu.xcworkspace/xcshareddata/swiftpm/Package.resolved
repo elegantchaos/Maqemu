@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "ApplicationExtensions",
-        "repositoryURL": "git@github.com:elegantchaos/ApplicationExtensions.git",
+        "repositoryURL": "https://github.com/elegantchaos/ApplicationExtensions.git",
         "state": {
           "branch": null,
-          "revision": "1da95b17f235c6029a0d307fcc0a1abfcdd6aa4a",
-          "version": "1.1.0"
+          "revision": "f5ee81af83a0c6807ff282adeb049a5d424d7571",
+          "version": "1.1.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/elegantchaos/Bundles.git",
         "state": {
           "branch": null,
-          "revision": "3a26a4c438cffe24a2943bbfd2aaf1acc25e79da",
-          "version": "1.0.3"
+          "revision": "e21d9b688841404ed0bcc3921616364f494d1359",
+          "version": "1.0.4"
         }
       },
       {
@@ -30,7 +30,7 @@
       },
       {
         "package": "Files",
-        "repositoryURL": "https://github.com/elegantchaos/Files",
+        "repositoryURL": "https://github.com/elegantchaos/Files.git",
         "state": {
           "branch": null,
           "revision": "fab79dce95afdcc1b7c6983d6874176465bd210a",
@@ -39,7 +39,7 @@
       },
       {
         "package": "Images",
-        "repositoryURL": "https://github.com/elegantchaos/Images",
+        "repositoryURL": "https://github.com/elegantchaos/Images.git",
         "state": {
           "branch": null,
           "revision": "59a9088a3f83e4e074df55e6d74b38cf52ffe75d",
@@ -56,12 +56,30 @@
         }
       },
       {
+        "package": "Runner",
+        "repositoryURL": "https://github.com/elegantchaos/Runner.git",
+        "state": {
+          "branch": null,
+          "revision": "77ec42e494a6c6c581c5361f83bc96d03b2d7191",
+          "version": "1.2.0"
+        }
+      },
+      {
         "package": "SemanticVersion",
-        "repositoryURL": "https://github.com/elegantchaos/SemanticVersion",
+        "repositoryURL": "https://github.com/elegantchaos/SemanticVersion.git",
         "state": {
           "branch": null,
           "revision": "6bda5a45a2f687a82a0fbb002bee8ad31e44f478",
           "version": "1.1.0"
+        }
+      },
+      {
+        "package": "XCTestExtensions",
+        "repositoryURL": "https://github.com/elegantchaos/XCTestExtensions.git",
+        "state": {
+          "branch": null,
+          "revision": "5a6c9b3d5889d48d647f2a165c9bba8b966d3a22",
+          "version": "1.1.1"
         }
       }
     ]
