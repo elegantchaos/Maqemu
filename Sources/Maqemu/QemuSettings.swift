@@ -20,7 +20,7 @@ struct QemuSettings: Codable {
         let optionKeys = [
             "machine": "-M",
             "memory": "-m",
-            "keyboard layout": "-k",
+            "language": "-k",
             "boot order": "-boot"
         ]
         

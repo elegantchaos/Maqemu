@@ -59,7 +59,7 @@ Currently the file looks something like this:
       "boot order": "cd",
       "machine": "mac99,via=pmu",
       "memory": "512",
-      "keyboard layout": "en-us"
+      "language": "en-us"
     },
 
     "extras": [
@@ -87,12 +87,23 @@ Right now, it works like this:
 - items in `options` generate a pair of arguments each; the first is a switch (see below for the mapping of names to switch), the second is the option value, unaltered
 - items in `extras` are appended to the command line unaltered
 
-The mappigns for the options are as follows:
+The mappings for the options are as follows:
 
 - "machine": "-M"
 - "memory": "-m"
-- "keyboard layout": "-k"
+- "language": "-k"
 - "boot order": "-boot"
 
 
 
+## Plans
+
+This is an early release, built for myself primarily.
+
+Some things I'm considering supporting:
+
+- menu commands to download / build QEMU (if bundling it with the app proves not to be feasible, or maybe anyway)
+- support for creating new drives and adding them to a bundled vm
+- support for importing existing drives into a bundled vm (either copying/moving them into the bundle, or linking to them)
+- nicer support for configuring various options
+- support for installing fresh systems (clearly this has to be done legally; I will not host images, but if there is a legal way to make it easier to create a new VM and install a system onto it - perhaps by downloading an .iso from a known location - I'd like to do it)  
