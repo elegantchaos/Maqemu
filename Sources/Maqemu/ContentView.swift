@@ -62,23 +62,22 @@ struct ContentView: View {
             
             Group {
                 HStack(alignment: .bottom) {
-                    Text(consoleText).font(.caption)
+                    TextField("Console", text: $console).font(.caption)
                     Button(action: self.run) {
                         Text("Run")
                     }
                 }.padding()
             }
         }
-        .frame(minWidth: 640, minHeight: 480)
+            .frame(minWidth: 640, minHeight: 480)
+            .onAppear() {
+                self.console = self.initialConsole
+            }
     }
     
-    var consoleText: String {
-        if console.isEmpty {
-            let args = document.arguments.joined(separator: " ")
-            return "> qemu.system.ppc \(args)"
-        } else {
-            return console
-        }
+    var initialConsole: String {
+        let args = document.arguments.joined(separator: " ")
+        return "> qemu.system.ppc \(args)"
     }
     
     func run() {
