@@ -20,7 +20,7 @@ dsa_priv.pem
 *.pbxuser
 !default.pbxuser
 *xcuserdata*
-*.xcuserdatad
+*.xcuserdatad/
 *.xccheckout
 *.xcscmblueprint
 
