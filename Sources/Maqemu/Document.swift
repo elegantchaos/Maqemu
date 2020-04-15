@@ -10,8 +10,8 @@ import Cocoa
 import Runner
 import SwiftUI
 
-class Document: NSDocument {
-    var settings = QemuSettings()
+class Document: NSDocument, ObservableObject {
+    @Published var settings = QemuSettings()
     var process: Runner.RunningProcess? = nil
     var console: String = ""
     
@@ -27,7 +27,8 @@ class Document: NSDocument {
 
     override func makeWindowControllers() {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(document: self)
+        let contentView = ContentView()
+            .environmentObject(self)
 
         // Create the window and set the content view.
         let window = NSWindow(

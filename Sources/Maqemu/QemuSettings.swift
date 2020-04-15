@@ -5,11 +5,12 @@
 
 import Foundation
 
-struct QemuSettings: Codable {
-    var disks: [String] = []
-    var devices: [String] = []
-    var options: [String:String] = [:]
-    var extras: [String] = []
+class QemuSettings: Codable, ObservableObject {
+    @Published var disks: [String] = []
+    @Published var cds: [String] = []
+    @Published var devices: [String] = []
+    @Published var options: [String:String] = [:]
+    @Published var extras: [String] = []
     
     func arguments(name: String, relativeTo fileURL: URL?) -> [String] {
         var arguments = [
@@ -52,4 +53,36 @@ struct QemuSettings: Codable {
         return arguments
     }
     
+}
+
+
+import Foundation
+import SwiftUI
+extension Published:Encodable where Value:Decodable {
+    public func encode(to encoder: Encoder) throws {
+        let mirror = Mirror(reflecting: self)
+        if let valueChild = mirror.children.first(where: { (child) -> Bool in
+            child.label == "value"
+        }) {
+            if let value = valueChild.value as? Encodable {
+                do {
+                    try value.encode(to: encoder)
+                    return
+                } catch let error {
+                    assertionFailure("Failed encoding: \(self) - \(error)")
+                }
+            }
+            else {
+                assertionFailure("Decodable Value not decodable. Odd \(self)")
+            }
+        }
+        else {
+            assertionFailure("Mirror Mirror on the wall - why no value y'all : \(self)")
+        }
+    }
+}
+extension Published:Decodable where Value:Decodable {
+    public init(from decoder: Decoder) throws {
+        self = Published(initialValue:try Value(from:decoder))
+    }
 }
