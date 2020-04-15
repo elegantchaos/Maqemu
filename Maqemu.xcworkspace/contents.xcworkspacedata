@@ -10,6 +10,12 @@
    <Group
       location = "group:"
       name = "Dependencies">
+      <FileRef
+         location = "group:../SwiftUIExtensions">
+      </FileRef>
+      <FileRef
+         location = "group:../Images">
+      </FileRef>
       <Group
          location = "container:"
          name = "RT">
