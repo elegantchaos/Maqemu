@@ -42,7 +42,9 @@ struct DisksView: View {
     
     func addDisk() {
         sheetController.show() {
-            return AnyView(Text("Sheet"))
+            return AnyView(
+                AddDiskView(disks: self.$disks).environmentObject(self.sheetController)
+            )
         }
 //        let panel = NSOpenPanel()
 //        panel.runModal()
