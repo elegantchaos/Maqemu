@@ -21,6 +21,8 @@
 		229C85B92445C6B40054FF1E /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 229C85B72445C6B40054FF1E /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		229C85BC2445CA7E0054FF1E /* qemu in Resources */ = {isa = PBXBuildFile; fileRef = 229C85BB2445CA7E0054FF1E /* qemu */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85BD2446170E0054FF1E /* QemuSettings.swift */; };
+		229C85C224472F050054FF1E /* DisksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C124472F050054FF1E /* DisksView.swift */; };
+		229C85C42447335A0054FF1E /* Published+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C32447335A0054FF1E /* Published+Codable.swift */; };
 		22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9222440BF130015033F /* ApplicationExtensions */; };
 		22AFB9262440BF7C0015033F /* Runner in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9252440BF7C0015033F /* Runner */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		229C85BB2445CA7E0054FF1E /* qemu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = qemu; sourceTree = "<group>"; };
 		229C85BD2446170E0054FF1E /* QemuSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QemuSettings.swift; sourceTree = "<group>"; };
 		229C85C02446230B0054FF1E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		229C85C124472F050054FF1E /* DisksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisksView.swift; sourceTree = "<group>"; };
+		229C85C32447335A0054FF1E /* Published+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				2297E547243FD3E80019AB35 /* Document.swift */,
 				229C85BD2446170E0054FF1E /* QemuSettings.swift */,
 				2297E549243FD3E80019AB35 /* ContentView.swift */,
+				229C85C124472F050054FF1E /* DisksView.swift */,
+				229C85C32447335A0054FF1E /* Published+Codable.swift */,
 				22890B842440891800CF906B /* Resources */,
 			);
 			path = Maqemu;
@@ -352,8 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229C85C224472F050054FF1E /* DisksView.swift in Sources */,
 				2297E548243FD3E80019AB35 /* Document.swift in Sources */,
 				2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */,
+				229C85C42447335A0054FF1E /* Published+Codable.swift in Sources */,
 				229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */,
 				2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */,
 			);

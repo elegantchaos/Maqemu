@@ -10,8 +10,31 @@ import Cocoa
 import Runner
 import SwiftUI
 
+class SheetController: ObservableObject {
+    typealias ViewMaker = () -> AnyView
+    
+    @Published var isPresented: Bool
+    var viewMaker: ViewMaker?
+
+    init() {
+        isPresented = false
+    }
+    
+    func show(_ maker: @escaping ViewMaker) {
+        viewMaker = maker
+        isPresented = true
+    }
+    
+    func dismiss() {
+        isPresented = false
+        viewMaker = nil
+    }
+}
+
 class Document: NSDocument, ObservableObject {
     @Published var settings = QemuSettings()
+    @Published var sheetController = SheetController()
+    
     var process: Runner.RunningProcess? = nil
     var console: String = ""
     
@@ -21,6 +44,12 @@ class Document: NSDocument, ObservableObject {
         // Add your subclass-specific initialization here.
     }
 
+    init(sample: Bool) {
+        super.init()
+        settings.disks.append("Disk 1")
+        settings.cds.append("CD 1")
+    }
+    
     override class var autosavesInPlace: Bool {
         return true
     }
@@ -29,6 +58,7 @@ class Document: NSDocument, ObservableObject {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
             .environmentObject(self)
+            .environmentObject(sheetController)
 
         // Create the window and set the content view.
         let window = NSWindow(
