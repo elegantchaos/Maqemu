@@ -1,49 +1,72 @@
-//
-//  Document.swift
-//  Maqemu
-//
-//  Created by Sam Deane on 09/04/2020.
-//  Copyright © 2020 Elegant Chaos. All rights reserved.
-//
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//  Created by Sam Deane on 15/04/2020.
+//  All code (c) 2020 - present day, Elegant Chaos Limited.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 import Cocoa
 import Runner
 import SwiftUI
+import SwiftUIExtensions
 
-class SheetController: ObservableObject {
-    typealias ViewMaker = () -> AnyView
+class DocumentWindowController: NSWindowController, ObservableObject {
+    var process: Runner.RunningProcess? = nil
+    let keyController = KeyController()
+    let sheetController = SheetController()
     
-    @Published var isPresented: Bool
-    var viewMaker: ViewMaker?
-
+    var qemuDocument: Document { return document as! Document }
+    
     init() {
-        isPresented = false
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        window.center()
+        super.init(window: window)
     }
     
-    func show(_ maker: @escaping ViewMaker) {
-        viewMaker = maker
-        isPresented = true
+    func setupContent() {
+        let contentView = ContentView()
+            .environmentObject(qemuDocument)
+            .environmentObject(sheetController)
+            .environmentObject(keyController)
+            .environmentObject(self)
+
+        window?.contentView = NSHostingView(rootView: contentView)
     }
     
-    func dismiss() {
-        isPresented = false
-        viewMaker = nil
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+
+//    override func keyUp(with event: NSEvent) {
+//        keypressManager.keyUp(with: event)
+//    }
+//
+//    override func keyDown(with event: NSEvent) {
+//        keypressManager.keyDown(with: event)
+//    }
+
+    func run(consoleCallback: @escaping Runner.PipeCallback) throws {
+        if let qemuURL = Bundle.main.url(forResource: "qemu", withExtension: "") {
+            let exeURL = qemuURL.appendingPathComponent("qemu-system-ppc")
+            let qemu = Runner(for: exeURL, cwd: qemuURL)
+
+            process = try qemu.async(arguments: qemuDocument.arguments, stdoutMode: .callback(block: consoleCallback), stderrMode: .callback(block: consoleCallback))
+        }
     }
 }
 
+
 class Document: NSDocument, ObservableObject {
     @Published var settings = QemuSettings()
-    @Published var sheetController = SheetController()
     
-    var process: Runner.RunningProcess? = nil
-    var console: String = ""
-    
+    var arguments: [String] { return settings.arguments(name: displayName, relativeTo: fileURL) }
+
+
     override init() {
         super.init()
-        
-        // Add your subclass-specific initialization here.
     }
-
+    
     init(sample: Bool) {
         super.init()
         settings.disks.append("Disk 1")
@@ -55,20 +78,9 @@ class Document: NSDocument, ObservableObject {
     }
 
     override func makeWindowControllers() {
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
-            .environmentObject(self)
-            .environmentObject(sheetController)
-
-        // Create the window and set the content view.
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.contentView = NSHostingView(rootView: contentView)
-        let windowController = NSWindowController(window: window)
+        let windowController = DocumentWindowController()
         self.addWindowController(windowController)
+        windowController.setupContent()
     }
 
     override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
@@ -104,15 +116,5 @@ class Document: NSDocument, ObservableObject {
     }
     
     
-    var arguments: [String] { return settings.arguments(name: displayName, relativeTo: fileURL) }
-    
-    func run(consoleCallback: @escaping Runner.PipeCallback) throws {
-        if let qemuURL = Bundle.main.url(forResource: "qemu", withExtension: "") {
-            let exeURL = qemuURL.appendingPathComponent("qemu-system-ppc")
-            let qemu = Runner(for: exeURL, cwd: qemuURL)
-
-            process = try qemu.async(arguments: arguments, stdoutMode: .callback(block: consoleCallback), stderrMode: .callback(block: consoleCallback))
-        }
-    }
 }
 

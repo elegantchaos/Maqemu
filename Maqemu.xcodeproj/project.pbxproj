@@ -22,8 +22,8 @@
 		229C85BC2445CA7E0054FF1E /* qemu in Resources */ = {isa = PBXBuildFile; fileRef = 229C85BB2445CA7E0054FF1E /* qemu */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85BD2446170E0054FF1E /* QemuSettings.swift */; };
 		229C85C224472F050054FF1E /* DisksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C124472F050054FF1E /* DisksView.swift */; };
-		229C85C42447335A0054FF1E /* Published+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C32447335A0054FF1E /* Published+Codable.swift */; };
 		229C85C6244752E80054FF1E /* AddDiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C5244752E80054FF1E /* AddDiskView.swift */; };
+		229C85C9244755830054FF1E /* SwiftUIExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 229C85C8244755830054FF1E /* SwiftUIExtensions */; };
 		22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9222440BF130015033F /* ApplicationExtensions */; };
 		22AFB9262440BF7C0015033F /* Runner in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9252440BF7C0015033F /* Runner */; };
 /* End PBXBuildFile section */
@@ -83,7 +83,6 @@
 		229C85BD2446170E0054FF1E /* QemuSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QemuSettings.swift; sourceTree = "<group>"; };
 		229C85C02446230B0054FF1E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		229C85C124472F050054FF1E /* DisksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisksView.swift; sourceTree = "<group>"; };
-		229C85C32447335A0054FF1E /* Published+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Codable.swift"; sourceTree = "<group>"; };
 		229C85C5244752E80054FF1E /* AddDiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229C85C9244755830054FF1E /* SwiftUIExtensions in Frameworks */,
 				22AFB9262440BF7C0015033F /* Runner in Frameworks */,
 				229C85B82445C6B40054FF1E /* Sparkle.framework in Frameworks */,
 				22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */,
@@ -178,7 +178,6 @@
 				2297E549243FD3E80019AB35 /* ContentView.swift */,
 				229C85C124472F050054FF1E /* DisksView.swift */,
 				229C85C5244752E80054FF1E /* AddDiskView.swift */,
-				229C85C32447335A0054FF1E /* Published+Codable.swift */,
 				22890B842440891800CF906B /* Resources */,
 			);
 			path = Maqemu;
@@ -238,6 +237,7 @@
 			packageProductDependencies = (
 				22AFB9222440BF130015033F /* ApplicationExtensions */,
 				22AFB9252440BF7C0015033F /* Runner */,
+				229C85C8244755830054FF1E /* SwiftUIExtensions */,
 			);
 			productName = Maqemu;
 			productReference = 2297E542243FD3E80019AB35 /* Maqemu.app */;
@@ -314,6 +314,7 @@
 			packageReferences = (
 				22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */,
 				22AFB9242440BF7C0015033F /* XCRemoteSwiftPackageReference "Runner" */,
+				229C85C7244755830054FF1E /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */,
 			);
 			productRefGroup = 2297E543243FD3E80019AB35 /* Products */;
 			projectDirPath = "";
@@ -365,7 +366,6 @@
 				2297E548243FD3E80019AB35 /* Document.swift in Sources */,
 				2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */,
 				229C85C6244752E80054FF1E /* AddDiskView.swift in Sources */,
-				229C85C42447335A0054FF1E /* Published+Codable.swift in Sources */,
 				229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */,
 				2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */,
 			);
@@ -679,6 +679,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		229C85C7244755830054FF1E /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elegantchaos/SwiftUIExtensions.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 		22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elegantchaos/ApplicationExtensions.git";
@@ -698,6 +706,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		229C85C8244755830054FF1E /* SwiftUIExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 229C85C7244755830054FF1E /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */;
+			productName = SwiftUIExtensions;
+		};
 		22AFB9222440BF130015033F /* ApplicationExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */;

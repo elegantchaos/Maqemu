@@ -4,10 +4,13 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 import SwiftUI
+import SwiftUIExtensions
 
 struct ContentView: View {
+    @EnvironmentObject var windowController: DocumentWindowController
     @EnvironmentObject var document: Document
     @EnvironmentObject var sheetController: SheetController
+    @EnvironmentObject var keyController: KeyController
     @State var console: String = ""
     
     var optionKeys: [String] {
@@ -64,7 +67,7 @@ struct ContentView: View {
             .frame(minWidth: 640, minHeight: 480)
             .onAppear(perform: handleAppear)
             .onDisappear(perform: handleDisappear)
-            .sheet(isPresented: $sheetController.isPresented) { self.document.sheetController.viewMaker!() }
+            .sheet(controlledBy: _sheetController, keyController: keyController)
     }
     
     var initialConsole: String {
@@ -84,7 +87,7 @@ struct ContentView: View {
         do {
             console = ""
             let appendConsole = { (string: String) in self.console.append(string) }
-            try document.run(consoleCallback: appendConsole)
+            try windowController.run(consoleCallback: appendConsole)
         } catch {
             console = "Failed to run QEMU.\n\n"
             console.append(String(describing: error))

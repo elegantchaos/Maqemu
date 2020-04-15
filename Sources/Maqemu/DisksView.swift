@@ -4,6 +4,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 import SwiftUI
+import SwiftUIExtensions
 
 struct DisksView: View {
     let label: String
@@ -29,7 +30,7 @@ struct DisksView: View {
                     HStack {
                         Button(action: addDisk) {
                             Image("Plus").resizable().frame(width: size, height: size)
-                            Text("add another disk").foregroundColor(.gray)
+                            Text("add a new disk").foregroundColor(.gray)
                         }
                     }
                 }
@@ -46,10 +47,6 @@ struct DisksView: View {
                 AddDiskView(disks: self.$disks).environmentObject(self.sheetController)
             )
         }
-//        let panel = NSOpenPanel()
-//        panel.runModal()
-//
-//        disks.append("New Disk")
     }
     
     func removeDisk(_ disk: String) {
