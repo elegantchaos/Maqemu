@@ -5,6 +5,7 @@
 
 import SwiftUI
 import SwiftUIExtensions
+import Carbon.HIToolbox.Events
 
 struct AddDiskView: View {
     @EnvironmentObject var sheetController: SheetController
@@ -17,6 +18,7 @@ struct AddDiskView: View {
     @State var type: Int = 0
     
     let types = ["Raw", "QCow2"]
+    @State var snapshot: KeyController.Snapshot?
     
     var body: some View {
         return Form {
@@ -62,17 +64,24 @@ struct AddDiskView: View {
         }
         .padding()
         .onAppear(perform: handleAppear)
+        .onDisappear(perform: handleDisappear)
     }
     
     func handleAppear() {
-        keyController.upTriggers[36] = {
+        snapshot = keyController.snapshot()
+        keyController.register(code: .keyReturn) {
             self.handleAdd()
             return true
         }
-        keyController.upTriggers[53] = {
+        
+        keyController.register(code: .keyEscape) {
             self.handleCancel()
             return true
         }
+    }
+    
+    func handleDisappear() {
+        keyController.restore(snapshot: snapshot!)
     }
     
     func handleCancel() {

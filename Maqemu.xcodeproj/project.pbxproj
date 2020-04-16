@@ -24,6 +24,7 @@
 		229C85C224472F050054FF1E /* DisksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C124472F050054FF1E /* DisksView.swift */; };
 		229C85C6244752E80054FF1E /* AddDiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85C5244752E80054FF1E /* AddDiskView.swift */; };
 		229C85C9244755830054FF1E /* SwiftUIExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 229C85C8244755830054FF1E /* SwiftUIExtensions */; };
+		229C85CB24486B970054FF1E /* KeyboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229C85CA24486B970054FF1E /* KeyboardConstants.swift */; };
 		22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9222440BF130015033F /* ApplicationExtensions */; };
 		22AFB9262440BF7C0015033F /* Runner in Frameworks */ = {isa = PBXBuildFile; productRef = 22AFB9252440BF7C0015033F /* Runner */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		229C85C02446230B0054FF1E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		229C85C124472F050054FF1E /* DisksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisksView.swift; sourceTree = "<group>"; };
 		229C85C5244752E80054FF1E /* AddDiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiskView.swift; sourceTree = "<group>"; };
+		229C85CA24486B970054FF1E /* KeyboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				2297E549243FD3E80019AB35 /* ContentView.swift */,
 				229C85C124472F050054FF1E /* DisksView.swift */,
 				229C85C5244752E80054FF1E /* AddDiskView.swift */,
+				229C85CA24486B970054FF1E /* KeyboardConstants.swift */,
 				22890B842440891800CF906B /* Resources */,
 			);
 			path = Maqemu;
@@ -367,6 +370,7 @@
 				2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */,
 				229C85C6244752E80054FF1E /* AddDiskView.swift in Sources */,
 				229C85BE2446170E0054FF1E /* QemuSettings.swift in Sources */,
+				229C85CB24486B970054FF1E /* KeyboardConstants.swift in Sources */,
 				2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
