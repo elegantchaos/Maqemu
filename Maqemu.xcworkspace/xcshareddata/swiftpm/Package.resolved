@@ -29,21 +29,21 @@
         }
       },
       {
+        "package": "Images",
+        "repositoryURL": "https://github.com/elegantchaos/Images.git",
+        "state": {
+          "branch": null,
+          "revision": "59a9088a3f83e4e074df55e6d74b38cf52ffe75d",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "SemanticVersion",
         "repositoryURL": "https://github.com/elegantchaos/SemanticVersion.git",
         "state": {
           "branch": null,
           "revision": "6bda5a45a2f687a82a0fbb002bee8ad31e44f478",
           "version": "1.1.0"
-        }
-      },
-      {
-        "package": "SwiftUIExtensions",
-        "repositoryURL": "https://github.com/elegantchaos/SwiftUIExtensions.git",
-        "state": {
-          "branch": null,
-          "revision": "5b5ae9762ae7b68a7f2d1619c1579611dec03fc0",
-          "version": "1.0.5"
         }
       },
       {

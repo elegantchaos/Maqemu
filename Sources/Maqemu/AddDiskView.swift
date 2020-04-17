@@ -10,15 +10,13 @@ import Carbon.HIToolbox.Events
 struct AddDiskView: View {
     @EnvironmentObject var sheetController: SheetController
     @EnvironmentObject var keyController: KeyController
-    @EnvironmentObject var document: Document
-
+    @EnvironmentObject var windowController: DocumentWindowController
+    
     @Binding var disks: [String]
     
     @State var name: String = "Unitled"
     @State var size: Double = 1000.0
-    @State var type: Int = 0
-    
-    let types = ["Raw", "QCow2"]
+    @State var type: Document.DiskType = .qcow2
     @State var snapshot: KeyController.Snapshot?
     
     var body: some View {
@@ -43,8 +41,8 @@ struct AddDiskView: View {
                 
                 HStack {
                     Picker(selection: $type, label: Text("Type")) {
-                        ForEach(types) { type in
-                            Text(type)
+                        ForEach(Document.DiskType.allCases, id: \.self) { type in
+                            Text(type.rawValue)
                         }
                     }
                 }
@@ -91,13 +89,10 @@ struct AddDiskView: View {
     
     func handleAdd() {
         sheetController.dismiss()
-        DispatchQueue.main.async { self.addDisk() }
+        DispatchQueue.main.async { self.deferredAdd() }
     }
     
-    func addDisk() {
-        let selectedType = types[type]
-        let selectedSize = Int(size)
-        disks.append("\(name) \(selectedSize).\(selectedType)")
+    func deferredAdd() {
+        windowController.addDisk(name: name, size: Int(size), type: type)
     }
-    
 }

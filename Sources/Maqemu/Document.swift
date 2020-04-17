@@ -55,6 +55,11 @@ class DocumentWindowController: NSWindowController, ObservableObject {
             process = try qemu.async(arguments: qemuDocument.arguments, stdoutMode: .callback(consoleCallback), stderrMode: .callback(consoleCallback))
         }
     }
+    
+    func addDisk(name: String, size: Int, type: Document.DiskType) {
+        
+        qemuDocument.settings.disks.append("\(name) \(size).\(type)")
+    }
 }
 
 
@@ -63,6 +68,11 @@ class Document: NSDocument, ObservableObject {
     var wrapper: FileWrapper?
     var arguments: [String] { return settings.arguments(name: displayName, relativeTo: fileURL) }
 
+    enum DiskType: String, CaseIterable {
+        case raw = "Raw"
+        case qcow2 = "QCow2"
+    }
+    
     override init() {
         super.init()
     }
