@@ -10,7 +10,8 @@ import Carbon.HIToolbox.Events
 struct AddDiskView: View {
     @EnvironmentObject var sheetController: SheetController
     @EnvironmentObject var keyController: KeyController
-    
+    @EnvironmentObject var document: Document
+
     @Binding var disks: [String]
     
     @State var name: String = "Unitled"

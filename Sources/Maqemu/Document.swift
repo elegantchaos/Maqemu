@@ -26,15 +26,20 @@ class DocumentWindowController: NSWindowController, ObservableObject {
             backing: .buffered, defer: false)
         window.center()
         super.init(window: window)
+
+        sheetController.environmentSetter = { view in AnyView(self.applyEnvironment(to: view)) }
     }
     
-    func setupContent() {
-        let contentView = ContentView()
+    func applyEnvironment<T>(to view: T) -> some View where T: View {
+        return view
             .environmentObject(qemuDocument)
             .environmentObject(sheetController)
             .environmentObject(keyController)
             .environmentObject(self)
-
+    }
+    
+    func setupContent() {
+        let contentView = applyEnvironment(to: ContentView())
         window?.contentView = NSHostingView(rootView: contentView)
     }
     

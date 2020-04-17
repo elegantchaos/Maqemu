@@ -44,7 +44,7 @@ struct DisksView: View {
     func addDisk() {
         sheetController.show() {
             return AnyView(
-                AddDiskView(disks: self.$disks).environmentObject(self.sheetController)
+                AddDiskView(disks: self.$disks)
             )
         }
     }
