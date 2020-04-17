@@ -87,7 +87,7 @@ struct ContentView: View {
         do {
             console = ""
             let appendConsole = { (string: String) in self.console.append(string) }
-            try windowController.run(consoleCallback: appendConsole)
+            try document.run(consoleCallback: appendConsole)
         } catch {
             console = "Failed to run QEMU.\n\n"
             console.append(String(describing: error))

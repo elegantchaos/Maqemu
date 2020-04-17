@@ -11,6 +11,9 @@
       location = "group:"
       name = "Dependencies">
       <FileRef
+         location = "group:../Files">
+      </FileRef>
+      <FileRef
          location = "group:../SwiftUIExtensions">
       </FileRef>
       <FileRef

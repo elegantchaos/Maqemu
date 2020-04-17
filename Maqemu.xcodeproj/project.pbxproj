@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		22890B822440890700CF906B /* Maqemu.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22890B802440890700CF906B /* Maqemu.xcconfig */; };
 		22890B832440890700CF906B /* BuildNumber.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22890B812440890700CF906B /* BuildNumber.xcconfig */; };
+		2290E1872449FDC500C8BC25 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 2290E1862449FDC500C8BC25 /* Files */; };
+		2290E189244A137900C8BC25 /* DocumentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290E188244A137900C8BC25 /* DocumentWindowController.swift */; };
 		2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E545243FD3E80019AB35 /* AppDelegate.swift */; };
 		2297E548243FD3E80019AB35 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E547243FD3E80019AB35 /* Document.swift */; };
 		2297E54A243FD3E80019AB35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297E549243FD3E80019AB35 /* ContentView.swift */; };
@@ -64,6 +66,7 @@
 		22890B802440890700CF906B /* Maqemu.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Maqemu.xcconfig; sourceTree = "<group>"; };
 		22890B812440890700CF906B /* BuildNumber.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = BuildNumber.xcconfig; sourceTree = "<group>"; };
 		22890BA9244089C400CF906B /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		2290E188244A137900C8BC25 /* DocumentWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentWindowController.swift; sourceTree = "<group>"; };
 		2297E542243FD3E80019AB35 /* Maqemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maqemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297E545243FD3E80019AB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2297E547243FD3E80019AB35 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 			files = (
 				229C85C9244755830054FF1E /* SwiftUIExtensions in Frameworks */,
 				22AFB9262440BF7C0015033F /* Runner in Frameworks */,
+				2290E1872449FDC500C8BC25 /* Files in Frameworks */,
 				229C85B82445C6B40054FF1E /* Sparkle.framework in Frameworks */,
 				22AFB9232440BF130015033F /* ApplicationExtensions in Frameworks */,
 			);
@@ -176,6 +180,7 @@
 			children = (
 				2297E545243FD3E80019AB35 /* AppDelegate.swift */,
 				2297E547243FD3E80019AB35 /* Document.swift */,
+				2290E188244A137900C8BC25 /* DocumentWindowController.swift */,
 				229C85BD2446170E0054FF1E /* QemuSettings.swift */,
 				2297E549243FD3E80019AB35 /* ContentView.swift */,
 				229C85C124472F050054FF1E /* DisksView.swift */,
@@ -241,6 +246,7 @@
 				22AFB9222440BF130015033F /* ApplicationExtensions */,
 				22AFB9252440BF7C0015033F /* Runner */,
 				229C85C8244755830054FF1E /* SwiftUIExtensions */,
+				2290E1862449FDC500C8BC25 /* Files */,
 			);
 			productName = Maqemu;
 			productReference = 2297E542243FD3E80019AB35 /* Maqemu.app */;
@@ -318,6 +324,7 @@
 				22AFB9212440BF130015033F /* XCRemoteSwiftPackageReference "ApplicationExtensions" */,
 				22AFB9242440BF7C0015033F /* XCRemoteSwiftPackageReference "Runner" */,
 				229C85C7244755830054FF1E /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */,
+				2290E1852449FDC500C8BC25 /* XCRemoteSwiftPackageReference "Files" */,
 			);
 			productRefGroup = 2297E543243FD3E80019AB35 /* Products */;
 			projectDirPath = "";
@@ -365,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2290E189244A137900C8BC25 /* DocumentWindowController.swift in Sources */,
 				229C85C224472F050054FF1E /* DisksView.swift in Sources */,
 				2297E548243FD3E80019AB35 /* Document.swift in Sources */,
 				2297E546243FD3E80019AB35 /* AppDelegate.swift in Sources */,
@@ -683,6 +691,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2290E1852449FDC500C8BC25 /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elegantchaos/Files.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 		229C85C7244755830054FF1E /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elegantchaos/SwiftUIExtensions.git";
@@ -710,6 +726,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2290E1862449FDC500C8BC25 /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2290E1852449FDC500C8BC25 /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
+		};
 		229C85C8244755830054FF1E /* SwiftUIExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 229C85C7244755830054FF1E /* XCRemoteSwiftPackageReference "SwiftUIExtensions" */;

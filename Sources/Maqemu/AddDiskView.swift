@@ -10,7 +10,7 @@ import Carbon.HIToolbox.Events
 struct AddDiskView: View {
     @EnvironmentObject var sheetController: SheetController
     @EnvironmentObject var keyController: KeyController
-    @EnvironmentObject var windowController: DocumentWindowController
+    @EnvironmentObject var document: Document
     
     @Binding var disks: [String]
     
@@ -93,6 +93,6 @@ struct AddDiskView: View {
     }
     
     func deferredAdd() {
-        windowController.addDisk(name: name, size: Int(size), type: type)
+        document.addDisk(name: name, size: Int(size), type: type)
     }
 }
